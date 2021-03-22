@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Subclassing and Diagram/1.0.0": {
+        "runtime": {
+          "Subclassing and Diagram.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Subclassing and Diagram/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

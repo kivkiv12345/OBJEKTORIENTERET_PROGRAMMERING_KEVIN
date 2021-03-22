@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Subclassing_and_Diagram.CampusMember">
+    <Position X="8.25" Y="0.75" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Subclassing_and_Diagram.CampusMember.ActionWrapper" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>CampusMember.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAkCAEAAAQAAAAAAAEAAAAAAAQAgAAAAA=</HashCode>
+      <FileName>CampusMember.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Subclassing_and_Diagram.Student">
+    <Position X="7" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Student.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Teacher" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Subclassing_and_Diagram.Teacher">
+    <Position X="9.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Teacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Subclassing_and_Diagram.Login">
+    <Position X="9.75" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAEAIAAAAAAAgAAAAA=</HashCode>
+      <FileName>CampusMember.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
