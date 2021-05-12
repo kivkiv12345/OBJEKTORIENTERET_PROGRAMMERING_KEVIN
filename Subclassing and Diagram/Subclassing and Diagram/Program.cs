@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using static Subclassing_and_Diagram.utils;
 
 namespace Subclassing_and_Diagram
 {
@@ -9,12 +10,19 @@ namespace Subclassing_and_Diagram
     {
         public static CampusMember CurrentUser = null;
 
-        public static IDictionary<Login, CampusMember> users = new List<KeyValuePair<Login, CampusMember>>
+        public static IDictionary<Login, CampusMember> users = new KeyValuePair<Login, CampusMember>[]
         {
             // Initial members are added in this list.
+
+            // Teachers:
             new Teacher("Egon", "IsNice").Login(),
+
+            // Students:
             new Student("Kiv", "Test1234!").Login(),
             new Student("Dig", "qwerty").Login(),
+            new Student("Mig", "password").Login(),
+            new Student("Benny", "banan").Login(),
+
         }.ToDictionary(x => x.Key, x => x.Value);
 
         static void Main(string[] args)
@@ -43,8 +51,7 @@ namespace Subclassing_and_Diagram
                         Console.WriteLine("Incorrect username or password. Please try again.");
                     }
                 }
-                // TODO Kevin: Maybe add a loading animation here.
-                Thread.Sleep(1500);
+                FakeLoading();
 
                 while (CurrentUser != null)
                 {
@@ -54,7 +61,13 @@ namespace Subclassing_and_Diagram
 
                     Console.WriteLine("These are your options: ");
 
-                    CurrentUser.PrintActions();
+                    try
+                    {
+                        CurrentUser.PrintActions();
+                    } catch (GoBackException)
+                    {
+                        Console.WriteLine("Welcome back! TODO");
+                    }
 
                     if (CurrentUser != null)
                         Console.ReadLine();

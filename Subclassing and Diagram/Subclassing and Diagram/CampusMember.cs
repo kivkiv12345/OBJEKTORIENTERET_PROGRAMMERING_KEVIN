@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static Subclassing_and_Diagram.utils;
 
 namespace Subclassing_and_Diagram
 {
@@ -23,7 +24,7 @@ namespace Subclassing_and_Diagram
             this.password = password;
         }
 
-        public override int GetHashCode() => (name + password).GetHashCode();
+        public override int GetHashCode() => (name.ToLower() + password).GetHashCode();
 
         public override bool Equals(object obj) => Equals(obj as Login);
         public bool Equals(Login obj) => obj != null && obj.GetHashCode() == this.GetHashCode();
@@ -78,14 +79,30 @@ namespace Subclassing_and_Diagram
 
         public void PrintActions()
         {
-            Console.WriteLine("=================================");
-            for (int i = 0; i < actions.Count; i++)
-            {
-                Console.WriteLine($"Type {i} to {actions[i].name}.");
-            }
-            Console.WriteLine("=================================");
+            bool again = true;
 
-            actions[Convert.ToInt32(Console.ReadLine())].action();
+            while (again)
+            {
+                again = false;
+
+                Console.WriteLine("=================================");
+                for (int i = 0; i < actions.Count; i++)
+                {
+                    Console.WriteLine($"Type {i} to {actions[i].name}.");
+                }
+                Console.WriteLine("=================================");
+
+                try
+                {
+                    actions[Convert.ToInt32(CheckGoBack())].action();
+                }
+                catch (Exception e) when (e is ArgumentOutOfRangeException || e is FormatException)
+                {
+                    again = true;
+                    Console.Clear();
+                    Console.WriteLine("Invalid input please try again.");
+                }
+            }
         }
 
         /// <summary>
